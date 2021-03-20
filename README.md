@@ -38,27 +38,22 @@ _final HelloWorld.js
 brew install beuluis/homebrew-tap/_final
 ```
 
-## Parameters
+or without brew
 
-| Parameter | Description                    |
-| --------- | ------------------------------ |
-| `-e`      | only echos the generated names |
-| `-h`      | display usage page             |
-
-## Customization
-
-1. Create a `config.conf` file
-
-```sh
-touch config.conf
+```bash
+# installs to /usr/local/bin/_final
+curl -L https://raw.githubusercontent.com/beuluis/_final-REMASTERED/master/_final >/usr/local/bin/_final
+chmod 0755 /usr/local/bin/_final
 ```
 
-2. Overwrite variables as you like (format: `{variable name}={variable value}`)
+## Parameters
 
-| Variable        | Description                                   | Default value |
-| --------------- | --------------------------------------------- | ------------- |
-| `modifiers_max` | maximal random modifiers                      | 5             |
-| `separators`    | set if separators (e.g. .-\_) should be added | true          |
+| Parameter          | Description                         | type      |
+| ------------------ | ----------------------------------- | --------- |
+| `-h --help`        | Show this usage summary and exit    | -         |
+| `-e`               | Only echos back the generated names | -         |
+| `--use_separators` | Use separators (e.g. . , - \_)      | `boolean` |
+| `--modifiers_max`  | Maximum modifiers to be generated   | `number`  |
 
 <!-- CONTRIBUTING -->
 
@@ -74,7 +69,7 @@ Contributions are what make the open source community such an amazing place to l
 
 ### Add more modifiers and separators
 
-Edit the file `modifiers.txt` or `separators.txt`. Each line is a modifiers/separators.
+Add them at the top of the script. Each line is a modifiers/separators.
 
 Modifiers and separators may only contain characters that are allowed in filenames.
 
